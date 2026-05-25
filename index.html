@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE BRAND 575 | Catálogo Animado</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* loader */
+.loader{
+position:fixed;
+inset:0;
+background:black;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+animation:fadeOut 1s ease 2.5s forwards;
+}
+
+.loader h1{
+font-size:4rem;
+letter-spacing:8px;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes fadeOut{
+to{
+opacity:0;
+visibility:hidden;
+}
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.06);}
+100%{transform:scale(1);}
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.9)),
+radial-gradient(circle at top,#b30000,#000);
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:1200px;
+height:1200px;
+background:radial-gradient(circle,rgba(255,0,0,.3),transparent 70%);
+animation:rotate 18s linear infinite;
+}
+
+@keyframes rotate{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+
+.hero h1{
+font-size:clamp(3rem,10vw,8rem);
+font-weight:900;
+letter-spacing:6px;
+position:relative;
+animation:up 1s ease;
+}
+
+.hero p{
+margin-top:20px;
+max-width:800px;
+font-size:1.2rem;
+color:#d5d5d5;
+position:relative;
+animation:up 1.5s ease;
+}
+
+@keyframes up{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.btn{
+margin-top:40px;
+padding:18px 40px;
+border-radius:60px;
+background:#ff0000;
+color:white;
+text-decoration:none;
+font-weight:700;
+position:relative;
+transition:.3s;
+box-shadow:0 0 40px rgba(255,0,0,.5);
+animation:float 3s ease-in-out infinite;
+}
+
+.btn:hover{
+transform:scale(1.06);
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+
+.section{
+padding:100px 20px;
+max-width:1400px;
+margin:auto;
+}
+
+.title{
+text-align:center;
+font-size:3rem;
+font-weight:900;
+margin-bottom:60px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-bottom:70px;
+}
+
+.card{
+background:linear-gradient(145deg,#101010,#1b1b1b);
+padding:35px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+transform:translateY(40px);
+opacity:0;
+}
+
+.card.show{
+transform:translateY(0);
+opacity:1;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 35px rgba(255,0,0,.25);
+border-color:#ff0000;
+}
+
+.card h2{
+margin-bottom:15px;
+font-size:1.4rem;
+color:#ff4b4b;
+}
+
+.viewer{
+width:100%;
+height:95vh;
+border-radius:30px;
+overflow:hidden;
+border:2px solid rgba(255,255,255,.1);
+box-shadow:0 0 45px rgba(255,0,0,.18);
+transform:scale(.95);
+opacity:0;
+transition:1s;
+}
+
+.viewer.show{
+transform:scale(1);
+opacity:1;
+}
+
+iframe{
+width:100%;
+height:100%;
+border:none;
+background:white;
+}
+
+.whatsapp{
+position:fixed;
+right:25px;
+bottom:25px;
+width:80px;
+height:80px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:38px;
+text-decoration:none;
+color:white;
+box-shadow:0 0 40px rgba(37,211,102,.5);
+animation:whats 2s infinite;
+z-index:999;
+}
+
+@keyframes whats{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
+footer{
+padding:50px 20px;
+text-align:center;
+color:#9a9a9a;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="loader">
+<h1>575</h1>
+</div>
+
+<section class="hero">
+<h1>THE BRAND 575</h1>
+<p>Catálogo virtual premium con animaciones modernas, estilo deportivo luxury y experiencia interactiva para celular y PC.</p>
+
+<a class="btn" href="#catalogo">VER CATÁLOGO</a>
+</section>
+
+<section class="section">
+
+<h2 class="title">COLECCIÓN 2026</h2>
+
+<div class="grid">
+
+<div class="card">
+<h2>FERRARI COLLECTION</h2>
+<p>Inspiración Fórmula 1 con acabados premium y estilo urbano deportivo.</p>
+</div>
+
+<div class="card">
+<h2>REDBULL RACING</h2>
+<p>Diseños modernos con estética racing y streetwear internacional.</p>
+</div>
+
+<div class="card">
+<h2>POLOS PREMIUM</h2>
+<p>Telas piqué y fría con acabados elegantes y look luxury.</p>
+</div>
+
+</div>
+
+<div class="viewer" id="catalogo">
+<iframe src="catalogo.pdf"></iframe>
+</div>
+
+</section>
+
+<a class="whatsapp" target="_blank" href="https://wa.me/573174163349">✆</a>
+
+<footer>
+THE BRAND 575 • IBAGUÉ • COLOMBIA
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+document.querySelectorAll('.card,.viewer').forEach(el=>{
+observer.observe(el);
+});
+</script>
+
+</body>
+</html>
